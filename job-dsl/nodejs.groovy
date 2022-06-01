@@ -1,15 +1,15 @@
-job('NodeJS Example') {
+job('generated-job-nodejs-example') {
     scm {
         git('https://github.com/tyeporter/jenkins-demo') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('Tye Porter')
-            node / gitConfigEmail('me@tyeporter.dev')
+            node / gitConfigEmail('tyeporterapps@gmail.com')
         }
     }
     triggers {
         scm('H/5 * * * *')
     }
     wrappers {
-        nodejs('NodeJS') // this is the name of the NodeJS installation in
+        nodejs('nodejs') // this is the name of the NodeJS installation in
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
     steps {
